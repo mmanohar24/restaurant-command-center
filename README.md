@@ -24,8 +24,15 @@ npm run dev
 
 ```
 src/
-  data.js      # Hardcoded restaurant / table / order / revenue data
-  App.jsx      # Root component (UI TBD)
-  main.jsx     # Entry point
-  index.css    # Tailwind import
+  data.js                 # Hardcoded restaurant / table / order / revenue data
+  App.jsx                 # Router
+  main.jsx                # Entry point
+  index.css               # Tailwind + theme tokens
+  components/
+    Layout.jsx            # App shell with sidebar + content area
+    Sidebar.jsx           # Fixed left nav (Overview / Tables / Orders)
+  pages/
+    Overview.jsx          # Live overview (placeholder)
+    Tables.jsx            # Table map (placeholder)
+    Orders.jsx            # Today's orders (placeholder)
 ```
