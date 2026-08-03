@@ -22,7 +22,7 @@ function matchesFilter(order, filterId) {
     case 'active':
       return ACTIVE_STATUSES.has(order.status)
     case 'completed':
-      return order.status === 'completed'
+      return order.status === 'completed' || order.status === 'served'
     case 'cancelled':
       return order.status === 'cancelled'
     case 'all':

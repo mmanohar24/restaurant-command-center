@@ -400,9 +400,9 @@ export const orders = [
       { menuItemId: 'M07', name: 'Garlic Naan', quantity: 1, unitPrice: 90, lineTotal: 90 },
     ],
     subtotal: 470,
-    tax: 0,
+    tax: 24,
     tip: 0,
-    total: 0,
+    total: 494,
   },
 ]
 

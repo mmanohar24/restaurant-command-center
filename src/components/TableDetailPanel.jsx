@@ -9,7 +9,7 @@ function TableDetailPanel({ table, order, onClose }) {
   if (!table) return null
 
   return (
-    <aside className="flex w-80 shrink-0 flex-col border border-border bg-white">
+    <aside className="sticky top-8 flex max-h-[calc(100vh-4rem)] w-80 shrink-0 flex-col overflow-hidden border border-border bg-white">
       <div className="flex items-start justify-between border-b border-border px-5 py-4">
         <div>
           <p className="text-xs font-medium uppercase tracking-wider text-ink-muted">

@@ -16,10 +16,20 @@ import {
 
 const ACTIVE_STATUSES = new Set(['pending', 'preparing', 'ready'])
 
+function formatLastUpdated(date) {
+  return date.toLocaleTimeString('en-IN', {
+    hour: 'numeric',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true,
+  })
+}
+
 function Overview() {
   const currentRevenue = revenue.current
   const targetRevenue = revenue.target ?? restaurant.target_revenue
   const revenueProgress = Math.round((currentRevenue / targetRevenue) * 100)
+  const lastUpdated = formatLastUpdated(new Date())
 
   const activeOrders = orders.filter((order) =>
     ACTIVE_STATUSES.has(order.status),
@@ -43,6 +53,9 @@ function Overview() {
         <p className="mt-1 text-sm text-ink-muted">
           Live snapshot for {restaurant.name} · today
         </p>
+        <p className="mt-1 text-xs text-ink-muted">
+          Last updated · {lastUpdated}
+        </p>
       </header>
 
       <div className="grid grid-cols-4 gap-4">
@@ -51,6 +64,7 @@ function Overview() {
           value={formatCurrency(currentRevenue)}
           detail={`of ${formatCurrency(targetRevenue)} target · ${revenueProgress}%`}
           accent={revenueProgress >= 70 ? 'green' : 'amber'}
+          progress={revenueProgress}
         />
         <StatCard
           label="Active Orders"

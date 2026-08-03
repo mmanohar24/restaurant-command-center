@@ -26,10 +26,10 @@ function Sidebar() {
             end={item.end}
             className={({ isActive }) =>
               [
-                'rounded-md px-3 py-2 text-sm font-medium transition-colors',
+                'rounded-md border-l-2 px-3 py-2 text-sm transition-colors',
                 isActive
-                  ? 'bg-ink text-white'
-                  : 'text-ink-muted hover:bg-border/60 hover:text-ink',
+                  ? 'border-ink bg-stone-200/80 font-semibold text-ink'
+                  : 'border-transparent font-medium text-ink-muted hover:bg-stone-100 hover:text-ink',
               ].join(' ')
             }
           >
