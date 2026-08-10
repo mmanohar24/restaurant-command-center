@@ -8,8 +8,8 @@ import {
 function TableDetailPanel({ table, order, onClose }) {
   if (!table) return null
 
-  return (
-    <aside className="sticky top-8 flex max-h-[calc(100vh-4rem)] w-80 shrink-0 flex-col overflow-hidden border border-border bg-white">
+  const panel = (
+    <aside className="flex h-full max-h-[90vh] w-full flex-col overflow-hidden border border-border bg-white lg:sticky lg:top-8 lg:max-h-[calc(100vh-4rem)] lg:w-80 lg:shrink-0">
       <div className="flex items-start justify-between border-b border-border px-5 py-4">
         <div>
           <p className="text-xs font-medium uppercase tracking-wider text-ink-muted">
@@ -67,7 +67,7 @@ function TableDetailPanel({ table, order, onClose }) {
         ) : null}
       </div>
 
-      <div className="flex-1 overflow-y-auto px-5 py-4">
+      <div className="min-h-0 flex-1 overflow-y-auto px-5 py-4">
         <h4 className="text-sm font-semibold text-ink">Items ordered</h4>
         {order ? (
           <ul className="mt-3 divide-y divide-border">
@@ -104,6 +104,15 @@ function TableDetailPanel({ table, order, onClose }) {
         </div>
       ) : null}
     </aside>
+  )
+
+  return (
+    <>
+      <div className="fixed inset-0 z-40 bg-ink/40 lg:hidden" onClick={onClose} />
+      <div className="fixed inset-x-0 bottom-0 z-50 lg:static lg:inset-auto lg:z-auto">
+        {panel}
+      </div>
+    </>
   )
 }
 

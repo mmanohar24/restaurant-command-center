@@ -34,8 +34,10 @@ function Tables() {
 
   return (
     <section>
-      <header className="mb-8">
-        <h2 className="text-2xl font-semibold tracking-tight text-ink">Tables</h2>
+      <header className="mb-6 sm:mb-8">
+        <h2 className="text-xl font-semibold tracking-tight text-ink sm:text-2xl">
+          Tables
+        </h2>
         <p className="mt-1 text-sm text-ink-muted">
           {floorSummary.occupied} occupied · {floorSummary.waitingForBill} waiting
           for bill · {floorSummary.available} available · {restaurant.total_tables}{' '}
@@ -43,9 +45,9 @@ function Tables() {
         </p>
       </header>
 
-      <div className="flex items-start gap-6">
+      <div className="flex flex-col items-stretch gap-6 lg:flex-row lg:items-start">
         <div className="min-w-0 flex-1">
-          <div className="mb-4 flex items-center gap-4 text-xs text-ink-muted">
+          <div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-ink-muted">
             <span className="inline-flex items-center gap-1.5">
               <span className="size-2.5 bg-emerald-500" aria-hidden />
               Available
@@ -60,7 +62,7 @@ function Tables() {
             </span>
           </div>
 
-          <div className="grid grid-cols-5 gap-3">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 md:grid-cols-4 xl:grid-cols-5">
             {tables.map((table) => (
               <TableCard
                 key={table.id}

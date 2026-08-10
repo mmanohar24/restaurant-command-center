@@ -46,8 +46,8 @@ function Overview() {
 
   return (
     <section>
-      <header className="mb-8">
-        <h2 className="text-2xl font-semibold tracking-tight text-ink">
+      <header className="mb-6 sm:mb-8">
+        <h2 className="text-xl font-semibold tracking-tight text-ink sm:text-2xl">
           Overview
         </h2>
         <p className="mt-1 text-sm text-ink-muted">
@@ -58,7 +58,7 @@ function Overview() {
         </p>
       </header>
 
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-4">
         <StatCard
           label="Today's Revenue"
           value={formatCurrency(currentRevenue)}
@@ -92,8 +92,8 @@ function Overview() {
         />
       </div>
 
-      <div className="mt-10">
-        <div className="mb-4 flex items-baseline justify-between">
+      <div className="mt-8 sm:mt-10">
+        <div className="mb-4 flex items-baseline justify-between gap-3">
           <h3 className="text-base font-semibold text-ink">Recent Activity</h3>
           <p className="text-xs text-ink-muted">Last 5 orders</p>
         </div>
@@ -102,10 +102,10 @@ function Overview() {
           {recentOrders.map((order) => (
             <li
               key={order.id}
-              className="flex items-center justify-between gap-6 py-3.5"
+              className="flex items-start justify-between gap-3 py-3.5 sm:items-center sm:gap-6"
             >
               <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                   <span className="text-sm font-medium text-ink">
                     {order.id}
                   </span>
@@ -123,7 +123,7 @@ function Overview() {
                 </p>
               </div>
 
-              <div className="text-right">
+              <div className="shrink-0 text-right">
                 <p className="text-sm font-semibold tabular-nums text-ink">
                   {formatCurrency(order.total)}
                 </p>

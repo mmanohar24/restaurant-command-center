@@ -32,7 +32,7 @@ function StatCard({ label, value, detail, accent = 'neutral', progress = null })
       <p className="text-xs font-medium uppercase tracking-wider text-ink-muted">
         {label}
       </p>
-      <p className="mt-2 text-3xl font-semibold tracking-tight text-ink tabular-nums">
+      <p className="mt-2 text-2xl font-semibold tracking-tight text-ink tabular-nums sm:text-3xl">
         {value}
       </p>
       {detail ? (

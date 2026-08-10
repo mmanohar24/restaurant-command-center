@@ -31,7 +31,7 @@ function TableCard({ table, orderTotal, selected, onSelect }) {
         if (isInteractive) onSelect(table.id)
       }}
       className={[
-        'flex min-h-36 flex-col border p-4 text-left transition-colors',
+        'flex min-h-32 flex-col border p-3 text-left transition-colors sm:min-h-36 sm:p-4',
         styles.card,
         isInteractive ? 'cursor-pointer hover:brightness-[0.98]' : 'cursor-default',
         selected ? 'ring-2 ring-ink ring-offset-2' : '',
@@ -39,7 +39,7 @@ function TableCard({ table, orderTotal, selected, onSelect }) {
     >
       <span
         className={[
-          'text-3xl font-semibold tracking-tight tabular-nums',
+          'text-2xl font-semibold tracking-tight tabular-nums sm:text-3xl',
           styles.number,
         ].join(' ')}
       >
@@ -47,9 +47,11 @@ function TableCard({ table, orderTotal, selected, onSelect }) {
       </span>
 
       {table.status === 'available' ? (
-        <p className={`mt-auto text-sm font-medium ${styles.muted}`}>Available</p>
+        <p className={`mt-auto text-xs font-medium sm:text-sm ${styles.muted}`}>
+          Available
+        </p>
       ) : (
-        <div className={`mt-auto space-y-1 text-sm ${styles.muted}`}>
+        <div className={`mt-auto space-y-0.5 text-xs sm:space-y-1 sm:text-sm ${styles.muted}`}>
           <p>
             <span className="font-medium text-inherit">{table.guests}</span>
             {table.guests === 1 ? ' guest' : ' guests'}
