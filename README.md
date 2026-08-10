@@ -4,7 +4,9 @@ Operations dashboard prototype for **Spice Garden**, built for [Explorex](https:
 
 Stack: React · Vite · Tailwind CSS. All restaurant data is hardcoded in `src/data.js` (no backend, API, or auth).
 
-**Live demo:** [https://restaurant-command-center-explorex.vercel.app](https://restaurant-command-center-explorex.vercel.app)
+**Live demo:** [https://restaurant-command-center-git-curso-0abacc-mmanohar24s-projects.vercel.app](https://restaurant-command-center-git-curso-0abacc-mmanohar24s-projects.vercel.app)  
+**Production alias:** [https://restaurant-command-center-explorex.vercel.app](https://restaurant-command-center-explorex.vercel.app)
+
 
 ## Setup
 
